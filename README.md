@@ -1,2 +1,186 @@
-# index.html
-BÁO TƯỜNG 20/11
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Báo Tường 20/11</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Times New Roman", serif;
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+    overflow-x: hidden;
+}
+
+/* Tuyết */
+.snowflake {
+    position: fixed;
+    top: -10px;
+    color: white;
+    font-size: 1em;
+    animation: fall linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    to { transform: translateY(100vh); }
+}
+
+/* Hoa */
+.flower {
+    position: fixed;
+    top: -20px;
+    font-size: 24px;
+    animation: flowerFall linear infinite;
+    pointer-events: none;
+}
+
+@keyframes flowerFall {
+    to { transform: translateY(100vh) rotate(360deg); }
+}
+
+.container {
+    width: 85%;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.3);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+h1 {
+    text-align: center;
+    font-size: 45px;
+    color: #d63384;
+    text-shadow: 0 0 10px #ff66b2;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ff66b2; }
+    to { text-shadow: 0 0 25px #ff1493; }
+}
+
+h2 {
+    color: #ff6600;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 5px;
+}
+
+.article {
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+.poem {
+    text-align: center;
+    font-style: italic;
+    margin: 20px 0;
+    font-size: 20px;
+    color: #444;
+}
+
+.media {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.media img,
+.media iframe {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bold;
+    color: #0066cc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 { font-size: 30px; }
+    .container { width: 95%; padding: 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🌸 BÁO TƯỜNG 20/11 🌸</h1>
+
+    <h2>Tri Ân Thầy Cô</h2>
+    <div class="article">
+        Ngày 20/11 là dịp để chúng em gửi lời tri ân sâu sắc đến thầy cô –
+        những người lái đò tận tụy, âm thầm đưa bao thế hệ học trò cập bến tương lai.
+    </div>
+
+    <h2>Thơ Tặng Thầy Cô</h2>
+    <div class="poem">
+        Người lái đò lặng lẽ<br>
+        Vượt sóng gió thời gian<br>
+        Ươm bao mầm tri thức<br>
+        Chắp cánh những ước ngàn.
+    </div>
+
+    <div class="media">
+        <img src="https://logico.com.vn/upload_images/images/2024/11/13/200-hinh-anh-chuc-mung-ngay-nha-giao-viet-nam-20-11-1.png" alt="20/11">
+    </div>
+
+    <div class="media">
+        <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/nVnflXQLEK8"
+        title="Video 20/11"
+        frameborder="0"
+        allowfullscreen>
+        </iframe>
+    </div>
+
+    <h2>Lời Cảm Ơn</h2>
+    <div class="article">
+        Nhân ngày Nhà giáo Việt Nam 20/11, chúng em xin kính chúc thầy cô
+        luôn mạnh khỏe, hạnh phúc và mãi là ngọn đèn soi sáng tương lai.
+    </div>
+
+    <footer>
+        Tập thể lớp 12 - Năm học 2025-2026
+    </footer>
+</div>
+
+<script>
+/* Tuyết */
+for (let i = 0; i < 25; i++) {
+    let snow = document.createElement("div");
+    snow.className = "snowflake";
+    snow.innerHTML = "❄";
+    snow.style.left = Math.random() * 100 + "vw";
+    snow.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    snow.style.opacity = Math.random();
+    document.body.appendChild(snow);
+}
+
+/* Hoa */
+for (let i = 0; i < 15; i++) {
+    let flower = document.createElement("div");
+    flower.className = "flower";
+    flower.innerHTML = "🌸";
+    flower.style.left = Math.random() * 100 + "vw";
+    flower.style.animationDuration = (Math.random() * 4 + 4) + "s";
+    flower.style.opacity = Math.random();
+    document.body.appendChild(flower);
+}
+</script>
+
+</body>
+</html>
